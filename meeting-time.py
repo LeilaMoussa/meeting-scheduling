@@ -32,15 +32,11 @@ while (i < len(allBusy) - 1):  ## note that len changes constantly
     _next = allBusy[i+1]
     start1, end1 = this[0], this[1]
     start2, end2 = _next[0], _next[1]
-    if start1<start2 and end1<end2 and end1 < start2:
+    if end1 < start2:
         ## strictly separate slots
         i += 1
     else:
-        new_start = min(start1, start2)
-        new_end = max(end1, end2)
-        new_slot = []
-        new_slot.append(new_start)
-        new_slot.append(new_end)
+        new_slot = [min(start1, start2), max(end1, end2)]
         del allBusy[i:i+2]
         allBusy.insert(i, new_slot)  ## 'i' can be greater than len
         ## do not move on yet
@@ -49,9 +45,7 @@ gaps = []
 for i in range(len(allBusy) - 1):
     gap_start = allBusy[i][1]
     gap_end = allBusy[i+1][0]
-    gap = []
-    gap.append(gap_start)
-    gap.append(gap_end)
+    gap = [gap_start, gap_end]
     gaps.append(gap)
 
 ## print("ans:" , gaps)

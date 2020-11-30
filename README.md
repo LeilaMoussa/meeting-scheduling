@@ -11,9 +11,11 @@ To-dos:
 - [ ] Implement text parser
 - [ ] Account for minimum meeting duration
 - [ ] Thorough testing
+- [ ] Some error handling
 
 Room for improvement:
 - [ ] Simplify the implementation (use less terrible data structures)
+- [ ] Look into modules/libraries that may help
 - [ ] Account for time & space efficiency
 - [ ] Ability to add an acceptable meeting time to the user's Outlook Calendar (using Outlook API)
 
